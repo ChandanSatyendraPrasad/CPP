@@ -30,18 +30,20 @@ int main()
 
     //To create thread object by passing function pointer to constructor of thread object
     //once thread created then callback passed inside thread object will be executed
-    thread threadObj1(func, 5);
+   thread threadObj1(func, 5);
 
     //Here below main thread is calling join function on threadObj1,
     //so it will wait for threadObj1 to complete its execution
-    threadObj1.join();
+  
+  threadObj1.join();
 
     cout << "2nd way by passing function object to the thread object as below: " << endl;
 
     //Here once thread object is created as shown below
     //then function object passed in thread object will be called and executed
     thread threadObj2(Test(), 5);
-    threadObj2.join();
+  
+  threadObj2.join();
 
     cout << "3rd way by using lambda function"<<endl;
     //Here we are creating thread object by using lambda function inside thread object
@@ -49,7 +51,7 @@ int main()
                       for (int i = 0; i < x; i++)
             cout << "Thread using lambda function"<<endl;
                       }, 5);
-    threadObj3.join();
+  threadObj3.join();
 
     return 0;
 }
